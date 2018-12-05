@@ -1,3 +1,9 @@
+
+/**
+ * Big Integer Calculator
+ *
+ * Peter Shumate
+ */
 public class BigIntCalc {
 
 	public static void main(String[] args) {
@@ -60,6 +66,13 @@ public class BigIntCalc {
 		return removeZero(sumAr);
 	}
 
+	/**
+	 * Subtracts one integer from another (read as strings). a - b = c
+	 *
+	 * @param str1 - a
+	 * @param str2 - b
+	 * @return result - c (as String)
+	 */
 	public static String subtract(String str1, String str2) {
 		int[] intAr1 = strIntAr(str1);
 		int[] intAr2 = strIntAr(str2);
@@ -77,6 +90,13 @@ public class BigIntCalc {
 		return removeZero(intAr1);
 	}
 
+	/**
+	 * Multiplies to integers (read as strings) together. a * b = c
+	 *
+	 * @param str1 - a
+	 * @param str2 - b
+	 * @return result - c (as String)
+	 */
 	public static String multiply(String str1, String str2) {
 		int[] bigAr;
 		int[] smallAr;
@@ -116,6 +136,13 @@ public class BigIntCalc {
 		return removeZero(prodAr);
 	}
 
+	/**
+	 * Divides one integers from another(read as strings). a / b = c
+	 *
+	 * @param str1 - a
+	 * @param str2 - b
+	 * @return result - c (as String)
+	 */
 	public static String divide(String str1, String str2) {
 		int[] ar1 = strIntAr(str1);
 		int[] ar2 = strIntAr(str2);
@@ -204,6 +231,12 @@ public class BigIntCalc {
 		return newArr;
 	}
 
+	/**
+	 * Strips zeros from an array and returns a string version.
+	 *
+	 * @param arr - array to be stripped
+	 * @return result - the array represented as a astring with the leading 0's stripped
+	 */
 	private static String removeZero(int[] arr) {
 		String result = "";
 		boolean zeros = true;
