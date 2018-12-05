@@ -24,8 +24,7 @@ Run:
 
 or
 
-Call the static methods:
-
+Call the static methods:  
 `add(str1, str2)`  
 `subtract(str1, str2)`  
 `multiply(str1, str2)`  
