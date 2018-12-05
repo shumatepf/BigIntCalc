@@ -3,9 +3,7 @@
 ## Description
 
 This program works similar to Java [BigInteger](https://docs.oracle.com/javase/7/docs/api/java/math/BigInteger.html) in that operations are performed on Strings rather than ints.
-Each operation function breaks the Strings into arrays of individual ints. From these arrays, the operations
-can be performed.
-Each function returns a String object.
+Each function breaks the Strings into arrays of individual ints and returns a String object.
 The 4 functions are:  
 - Add  
 - Subtract  
