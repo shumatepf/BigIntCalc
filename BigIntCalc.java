@@ -216,7 +216,7 @@ public class BigIntCalc {
 			}
 		}
 		if (result.equals("")) {
-			return "0;
+			return "0";
 		}
 		return result;
 	}
