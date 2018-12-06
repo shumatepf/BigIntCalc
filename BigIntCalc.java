@@ -51,14 +51,14 @@ public class BigIntCalc {
 			sumAr[j + 1] = digit;
 		}
 
-		int remIndex = bigAr.length - smallAr.length;
+		int remIndex = bigAr.length - smallAr.length - 1;
 
 		while (rem != 0 && remIndex >= 0) {
 			int sum = bigAr[remIndex] + rem;
 			int digit = sum % 10;
 			rem = sum / 10;
 
-			sumAr[remIndex] = digit;
+			sumAr[remIndex + 1] = digit;
 			remIndex--;
 		}
 		sumAr[0] = rem;
@@ -122,7 +122,7 @@ public class BigIntCalc {
 				rem = product / 10;
 				prodAr[x] += digit;
 				if (prodAr[x] >= 10) {
-					rem = prodAr[x] / 10;
+					rem += prodAr[x] / 10;
 					prodAr[x] %= 10;
 				}
 				x--;
