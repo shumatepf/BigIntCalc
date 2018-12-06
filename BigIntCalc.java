@@ -81,10 +81,15 @@ public class BigIntCalc {
 
 		for (int i = intAr1.length - 1, j = intAr2.length - 1; j >= 0; i--, j--) {
 			int bI = i;
-			intAr1[i] -= intAr2[j];
-			while (intAr1[bI] < 0) {
-				intAr1[bI] += 10;
-				intAr1[--bI]--;
+			try {
+				intAr1[i] -= intAr2[j];
+				while (intAr1[bI] < 0) {
+					intAr1[bI] += 10;
+					intAr1[--bI]--;
+				}	
+			} catch (ArrayIndexOutOfBoundsException e) {
+				System.out.println("Error: b cannot be greater than a");
+				return null;
 			}
 		}
 		return removeZero(intAr1);
@@ -147,14 +152,24 @@ public class BigIntCalc {
 		int[] ar1 = strIntAr(str1);
 		int[] ar2 = strIntAr(str2);
 
+		if (removeZero(ar2).equals("0")) {
+			System.out.println("Error: Cannot divide by 0");
+			return null;
+		}
+
 		int[] result = new int[ar1.length];
 		int[] initDiv = new int[ar2.length];
 
 		int divIndex = -1;
 
-		for (int i = 0; i < ar2.length; i++) {
-			initDiv[i] = ar1[i];
-			divIndex++;
+		try {
+			for (int i = 0; i < ar2.length; i++) {
+				initDiv[i] = ar1[i];
+				divIndex++;
+			}
+		} catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("Error: b cannot be greater than a");
+			return null;
 		}
 
 		try {
